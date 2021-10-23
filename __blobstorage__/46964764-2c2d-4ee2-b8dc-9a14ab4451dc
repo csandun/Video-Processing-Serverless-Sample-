@@ -1,0 +1,85 @@
+{
+  "masterKey": {
+    "name": "master",
+    "value": "/Bc6unHzmGhwmn7lHpeaA5SDJNkDIyHjYSkf2GoJRT7JtI/Jv8p9jw==",
+    "encrypted": false
+  },
+  "functionKeys": [
+    {
+      "name": "default",
+      "value": "SJJjbEsTVSXnEFAP8A/2uaxS4n7W2ldajD7gZi9N8AnbD2dSUG5XUw==",
+      "encrypted": false
+    }
+  ],
+  "systemKeys": [],
+  "hostName": "localhost:7071",
+  "instanceId": "0000000000000000000000000D8D1A1C",
+  "source": "runtime",
+  "decryptionKeyId": ""
+}{
+  "masterKey": {
+    "name": "master",
+    "value": "/Bc6unHzmGhwmn7lHpeaA5SDJNkDIyHjYSkf2GoJRT7JtI/Jv8p9jw==",
+    "encrypted": false
+  },
+  "functionKeys": [
+    {
+      "name": "default",
+      "value": "SJJjbEsTVSXnEFAP8A/2uaxS4n7W2ldajD7gZi9N8AnbD2dSUG5XUw==",
+      "encrypted": false
+    }
+  ],
+  "systemKeys": [
+    {
+      "name": "durabletask_extension",
+      "value": "vwFZRLpb1iN8XhfNqzfc1c//2alhdVr7AfOb/6A8OoMCkZTZaEoJow==",
+      "encrypted": false
+    }
+  ],
+  "hostName": "localhost:7071",
+  "instanceId": "0000000000000000000000000D8D1A1C",
+  "source": "runtime",
+  "decryptionKeyId": ""
+}{}{"TaskHubName":"TestHubName","CreatedAt":"2021-10-23T01:48:09.4123936Z","PartitionCount":4}{"PartitionId":"testhubname-control-03","Owner":null,"Token":null,"Epoch":0}{"OwnerId":"d98c1dd4-008f-04b2-e980-0998ecf8427e","DesiredSwapId":null}{"PartitionId":"testhubname-control-00","Owner":"TI-NB-433","Token":"3f240c59-26ee-4866-822b-658f55a9b0b4","Epoch":1}{"PartitionId":"testhubname-control-01","Owner":"TI-NB-433","Token":"a14b86a2-8382-44df-90cd-e891e32ad1c2","Epoch":1}{"PartitionId":"testhubname-control-02","Owner":"TI-NB-433","Token":"cb1b423f-f495-4190-b1b8-4b30a6c68725","Epoch":1}{"PartitionId":"testhubname-control-03","Owner":"TI-NB-433","Token":"63704b2d-08e8-4c8f-b6d7-de1beeced65f","Epoch":1}{"PartitionId":"testhubname-control-00","Owner":"TI-NB-433","Token":"8e8e2b2a-9029-49c7-9d69-1a5e43f8eca8","Epoch":1}{"PartitionId":"testhubname-control-01","Owner":"TI-NB-433","Token":"bb457ebf-b776-49c9-b3a8-c2cfbf863901","Epoch":1}{"PartitionId":"testhubname-control-02","Owner":"TI-NB-433","Token":"98fadc1c-b504-4925-9cab-56a933054f36","Epoch":1}{"PartitionId":"testhubname-control-03","Owner":"TI-NB-433","Token":"b7f39b44-add0-4c98-baba-c093f952bfd8","Epoch":1}{"PartitionId":"testhubname-control-03","Owner":null,"Token":null,"Epoch":1}{
+  "masterKey": {
+    "name": "master",
+    "value": "6klnJS6pSKTSXiRcPlow6huRKqOEoqnxgOttBXDXCBd3zHImMvvItg==",
+    "encrypted": false
+  },
+  "functionKeys": [
+    {
+      "name": "default",
+      "value": "/KuedOwEtQPwig6Veg9NXQzuNt7QR9YNUptUHiHfj3bszed9rmcflg==",
+      "encrypted": false
+    }
+  ],
+  "systemKeys": [],
+  "hostName": "localhost:7071",
+  "instanceId": "0000000000000000000000000D8D1A1C",
+  "source": "runtime",
+  "decryptionKeyId": ""
+}{
+  "masterKey": {
+    "name": "master",
+    "value": "6klnJS6pSKTSXiRcPlow6huRKqOEoqnxgOttBXDXCBd3zHImMvvItg==",
+    "encrypted": false
+  },
+  "functionKeys": [
+    {
+      "name": "default",
+      "value": "/KuedOwEtQPwig6Veg9NXQzuNt7QR9YNUptUHiHfj3bszed9rmcflg==",
+      "encrypted": false
+    }
+  ],
+  "systemKeys": [
+    {
+      "name": "durabletask_extension",
+      "value": "ZL0mTIrnMaz1hWrLC1Bm2yoJ3xj4scPt9ZwdjTMjSjTBlIiimfjaEQ==",
+      "encrypted": false
+    }
+  ],
+  "hostName": "localhost:7071",
+  "instanceId": "0000000000000000000000000D8D1A1C",
+  "source": "runtime",
+  "decryptionKeyId": ""
+}{}{"PartitionId":"testhubname-control-01","Owner":null,"Token":null,"Epoch":0}{"PartitionId":"testhubname-control-00","Owner":"TI-NB-433","Token":"c525d200-ed4a-4227-8a1e-944a69b876d7","Epoch":2}{"PartitionId":"testhubname-control-01","Owner":"TI-NB-433","Token":"95b925fc-d2ec-454e-b6a7-0899c01af955","Epoch":2}{"PartitionId":"testhubname-control-02","Owner":"TI-NB-433","Token":"1f83abbd-2b87-49f4-a9aa-0f4481c60d22","Epoch":2}{"PartitionId":"testhubname-control-03","Owner":"TI-NB-433","Token":"0110f427-debd-44a4-8ec3-0f3a238a638f","Epoch":2}{"PartitionId":"testhubname-control-00","Owner":"TI-NB-433","Token":"2bd612b1-c269-4fc3-939d-64d815457900","Epoch":2}{"PartitionId":"testhubname-control-01","Owner":"TI-NB-433","Token":"acf9be7c-304a-431f-8d67-2b244a1530bb","Epoch":2}{"PartitionId":"testhubname-control-02","Owner":"TI-NB-433","Token":"30f88a4e-6dbd-47f8-8368-e0d9c9104509","Epoch":2}{"PartitionId":"testhubname-control-03","Owner":"TI-NB-433","Token":"a94073c4-f484-499e-883e-698fb28cdcdb","Epoch":2}{}{"PartitionId":"testhubname-control-02","Owner":null,"Token":null,"Epoch":0}{}{"PartitionId":"testhubname-control-03","Owner":null,"Token":null,"Epoch":0}{}{"PartitionId":"testhubname-control-03","Owner":null,"Token":null,"Epoch":0}{"PartitionId":"testhubname-control-00","Owner":null,"Token":null,"Epoch":0}{}{"PartitionId":"testhubname-control-02","Owner":null,"Token":null,"Epoch":0}{}{"PartitionId":"testhubname-control-00","Owner":null,"Token":null,"Epoch":0}{"PartitionId":"testhubname-control-02","Owner":null,"Token":null,"Epoch":0}{"PartitionId":"testhubname-control-01","Owner":null,"Token":null,"Epoch":0}{}{"PartitionId":"testhubname-control-03","Owner":null,"Token":null,"Epoch":0}{}{"PartitionId":"testhubname-control-00","Owner":null,"Token":null,"Epoch":0}{"PartitionId":"testhubname-control-02","Owner":null,"Token":null,"Epoch":0}{}{"PartitionId":"testhubname-control-02","Owner":null,"Token":null,"Epoch":0}{"PartitionId":"testhubname-control-02","Owner":null,"Token":null,"Epoch":2}{"PartitionId":"testhubname-control-02","Owner":null,"Token":null,"Epoch":2}{}{"PartitionId":"testhubname-control-01","Owner":null,"Token":null,"Epoch":0}{"PartitionId":"testhubname-control-03","Owner":null,"Token":null,"Epoch":0}{"PartitionId":"testhubname-control-00","Owner":"TI-NB-433","Token":"e404cc6a-46a3-4de1-9aa6-28ec2b28c28f","Epoch":3}{"PartitionId":"testhubname-control-01","Owner":"TI-NB-433","Token":"789df536-148e-40ee-94ec-5f6f5c1a58b1","Epoch":3}{"PartitionId":"testhubname-control-02","Owner":"TI-NB-433","Token":"720652be-a8f6-45e5-8138-de73d5d359e1","Epoch":3}{"PartitionId":"testhubname-control-03","Owner":"TI-NB-433","Token":"3e6c850d-dd55-43c6-b600-a5d5769a564b","Epoch":3}{"PartitionId":"testhubname-control-00","Owner":"TI-NB-433","Token":"2760eb4e-dca7-4c37-8769-5244fb816785","Epoch":3}{"PartitionId":"testhubname-control-01","Owner":"TI-NB-433","Token":"146af24c-5908-4561-a60c-ae3c038dd3a5","Epoch":3}{"PartitionId":"testhubname-control-02","Owner":"TI-NB-433","Token":"83895fff-efa5-430a-86b6-4b1627acfe47","Epoch":3}{"PartitionId":"testhubname-control-03","Owner":"TI-NB-433","Token":"5c75798a-801b-4a6b-a9a6-f1ee82cc6955","Epoch":3}{"PartitionId":"testhubname-control-01","Owner":null,"Token":null,"Epoch":3}{"PartitionId":"testhubname-control-03","Owner":null,"Token":null,"Epoch":3}{"PartitionId":"testhubname-control-00","Owner":null,"Token":null,"Epoch":3}{}{"PartitionId":"testhubname-control-03","Owner":null,"Token":null,"Epoch":0}{"PartitionId":"testhubname-control-00","Owner":null,"Token":null,"Epoch":0}{"PartitionId":"testhubname-control-00","Owner":"TI-NB-433","Token":"e0738d2f-600e-4607-a980-5e20e7a8cfe4","Epoch":4}{"PartitionId":"testhubname-control-01","Owner":"TI-NB-433","Token":"a0b4c50c-0a8a-405d-b43d-642b087c09c6","Epoch":4}{"PartitionId":"testhubname-control-02","Owner":"TI-NB-433","Token":"a2352039-39a4-4a23-b5f6-6d97320998f3","Epoch":4}{"PartitionId":"testhubname-control-03","Owner":"TI-NB-433","Token":"419628a5-629a-4777-b000-1feef8f5c40e","Epoch":4}{"PartitionId":"testhubname-control-00","Owner":"TI-NB-433","Token":"0bb0621c-0156-4c71-834a-e5f48ab4dc49","Epoch":4}{"PartitionId":"testhubname-control-01","Owner":"TI-NB-433","Token":"1448a339-29c0-462c-b63f-65abf1c99c6b","Epoch":4}{"PartitionId":"testhubname-control-02","Owner":"TI-NB-433","Token":"9e603439-cb9a-4d01-a44d-3f28e99c5e1a","Epoch":4}{"PartitionId":"testhubname-control-03","Owner":"TI-NB-433","Token":"fba06431-1d14-477d-8364-dbdebb212694","Epoch":4}{"PartitionId":"testhubname-control-03","Owner":null,"Token":null,"Epoch":4}{"PartitionId":"testhubname-control-03","Owner":null,"Token":null,"Epoch":4}
