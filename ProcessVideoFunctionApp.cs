@@ -23,60 +23,85 @@ namespace Csandun.VideoProcessor
             _logger = log;
         }
 
+
+        #region  Orchestrator
         [FunctionName(nameof(ProcessVideoOrchestrator))]
-        public async Task<List<string>> ProcessVideoOrchestrator(
+        public async Task<List<VideoFileInfo>> ProcessVideoOrchestrator(
             [OrchestrationTrigger] IDurableOrchestrationContext context)
         {
+
+            int[] bitRates = { 100, 120, 1000 };
             var inputs = context.GetInput<ProcessVideoInputModel>();
-            var outputs = new List<string>();
+            var outputs = new List<VideoFileInfo>();
+            var transcodes = new List<Task<VideoFileInfo>>();
+
 
             // transcode
-            var transcodedvideo = await context.CallActivityAsync<string>(nameof(TranscodeVideo), inputs);
+            var transcodedvideo = await context.CallActivityAsync<VideoFileInfo>(nameof(TranscodeVideo), inputs);
             outputs.Add(transcodedvideo);
 
-            // extract thumbnail
-            var thumbnailPng = await context.CallActivityAsync<string>(nameof(ExtractThumbnail), transcodedvideo);
-            outputs.Add(thumbnailPng);
+            foreach (var bitRate in bitRates)
+            {
+                transcodedvideo.BitRate = bitRate;
+                // extract thumbnail
+                var thumbnailPng = context.CallActivityAsync<VideoFileInfo>(nameof(ExtractThumbnailAsync), transcodedvideo);
+                transcodes.Add(thumbnailPng);
+            }
+
+            var outputsofThum = (await Task.WhenAll<VideoFileInfo>(transcodes)).First();
+            outputs.Add(outputsofThum);
 
             // prepend intro
-            var prepentIntro = await context.CallActivityAsync<string>(nameof(PrependIntro), transcodedvideo);
+            var prepentIntro = await context.CallActivityAsync<VideoFileInfo>(nameof(PrependIntro), transcodedvideo);
             outputs.Add(prepentIntro);
 
-            outputs.ToList().ForEach(o => {
-                System.Console.WriteLine(o);
+            outputs.ToList().ForEach(o =>
+            {
+                System.Console.WriteLine(o.Path);
             });
-            
+
 
             return outputs;
         }
+        #endregion
 
+        #region  activity functions
         [FunctionName(nameof(TranscodeVideo))]
-        public string TranscodeVideo([ActivityTrigger] ProcessVideoInputModel model)
+        public async Task<VideoFileInfo> TranscodeVideo([ActivityTrigger] VideoFileInfo model)
         {
             _logger.LogInformation($"Processing start - transcode video {model.Path}.");
-            Thread.Sleep(10000);
-            var fileName = Path.GetFileName(model.Path);
-            return Path.Combine(fileName, "mp4");
+            await Task.Delay(5000);
+            var fileName = Path.GetFileNameWithoutExtension(model.Path);
+            var videoInfo = new VideoFileInfo()
+            {
+                Path = fileName + "-transcoded.mp4"
+            };
+            return videoInfo;
         }
 
-        [FunctionName(nameof(ExtractThumbnail))]
-        public string ExtractThumbnail([ActivityTrigger] string transcodepath)
+        [FunctionName(nameof(ExtractThumbnailAsync))]
+        public async Task<VideoFileInfo> ExtractThumbnailAsync([ActivityTrigger] VideoFileInfo model)
         {
-            _logger.LogInformation($"Processing start - Extracting video {transcodepath}.");
-            Thread.Sleep(90000);
-            var fileName = Path.GetFileName(transcodepath);
-            return Path.Combine(fileName, "png");
+            _logger.LogInformation($"Processing start - Extracting video {model.Path}.");
+            await Task.Delay(10000);
+            var fileName = Path.GetFileNameWithoutExtension(model.Path) + "-" + model.BitRate + "-extracted.png";
+            var fileInfo = new VideoFileInfo() { Path = fileName, BitRate = model.BitRate };
+            return fileInfo;
         }
 
         [FunctionName(nameof(PrependIntro))]
-        public string PrependIntro([ActivityTrigger] string transcodepath)
+        public async Task<VideoFileInfo> PrependIntro([ActivityTrigger] VideoFileInfo model)
         {
-            _logger.LogInformation($"Processing start - Extracting video {transcodepath}.");
-            Thread.Sleep(60000);
-            var fileName = Path.GetFileName(transcodepath);
-            return Path.Combine(fileName, "txt");
+            _logger.LogInformation($"Processing start - Extracting video {model.Path}.");
+            await Task.Delay(5000);
+            var fileName = Path.GetFileNameWithoutExtension(model.Path) + "-" + model.BitRate + "-prepended.txt";
+            var fileInfo = new VideoFileInfo() { Path = fileName, BitRate = model.BitRate };
+            return fileInfo;
         }
 
+        #endregion
+
+        #region  starter function
         [FunctionName(nameof(ProcessVideoStarter))]
         public async Task<IActionResult> ProcessVideoStarter(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequest req,
@@ -84,7 +109,8 @@ namespace Csandun.VideoProcessor
         {
             var filePath = req.GetQueryParameterDictionary()["video"];
 
-            if(string.IsNullOrWhiteSpace(filePath)){
+            if (string.IsNullOrWhiteSpace(filePath))
+            {
                 return new NotFoundResult();
             }
 
@@ -95,5 +121,6 @@ namespace Csandun.VideoProcessor
 
             return starter.CreateCheckStatusResponse(req, instanceId);
         }
+        #endregion
     }
 }
